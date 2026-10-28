@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* HireNext — Premium SaaS Dark Theme
+       Exact tokens from docs/02_UI_UX_Guide.md */
+    --background: 0 0% 3.5%; /* #090909 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    --card: 0 0% 9.4%; /* #181818 */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --popover: 0 0% 4.5%; /* #121212 */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --sidebar: 0 0% 6.7%; /* #111111 */
+    --sidebar-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --primary: 356 90% 46%; /* #E50914 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 0 0% 9.4%; /* #181818 */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --muted: 0 0% 9.4%; /* #181818 */
+    --muted-foreground: 240 5% 65%; /* #A1A1AA */
+
+    --accent: 0 0% 17%; /* #2C2C2C */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 0 84% 60%; /* #EF4444 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --success: 140 60% 45%; /* #22C55E */
+    --warning: 40 90% 50%; /* #F59E0B */
+
+    --border: 0 0% 17%; /* #2C2C2C */
+    --input: 0 0% 17%; /* #2C2C2C */
+    --ring: 356 90% 46%; /* #E50914 */
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.5%; /* #090909 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    --card: 0 0% 9.4%; /* #181818 */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --popover: 0 0% 4.5%; /* #121212 */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --sidebar: 0 0% 6.7%; /* #111111 */
+    --sidebar-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --primary: 356 90% 46%; /* #E50914 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 0 0% 9.4%; /* #181818 */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --muted: 0 0% 9.4%; /* #181818 */
+    --muted-foreground: 240 5% 65%; /* #A1A1AA */
+
+    --accent: 0 0% 17%; /* #2C2C2C */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 0 84% 60%; /* #EF4444 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --success: 140 60% 45%; /* #22C55E */
+    --warning: 40 90% 50%; /* #F59E0B */
+
+    --border: 0 0% 17%; /* #2C2C2C */
+    --input: 0 0% 17%; /* #2C2C2C */
+    --ring: 356 90% 46%; /* #E50914 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Hide scrollbar for sidebar when not needed */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #2c2c2c transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #090909;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e50914;
+  }
+}
+
+@layer components {
+  /* Sidebar nav item */
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground;
+  }
+
+  .sidebar-link-active {
+    @apply bg-brand-red/10 text-brand-red hover:bg-brand-red/15 hover:text-brand-red;
+  }
+}
+
+@layer utilities {
+  .text-gradient-red {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-red to-brand-red-light;
+  }
+
+  .glow-red {
+    box-shadow: 0 0 24px rgba(229, 9, 20, 0.35);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
